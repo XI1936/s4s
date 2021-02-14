@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from './../environments/environment.prod';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  title = 'saif❤️sana';
+export class AppComponent{
+  title = 'saif💍❤️sana';
   currentTime = new Date();
   seconds: any;
   calDate: any;
@@ -50,7 +51,4 @@ export class AppComponent implements OnInit {
     this.findDiff();
   }, 1000);
 
-  ngOnInit() {
-    this.findDiff();
-  }
 }
