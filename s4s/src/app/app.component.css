@@ -1,0 +1,25 @@
+.main{
+    box-shadow: 28px -38px -14px 14px;
+    display: block;
+    /* border: 2px solid black; */
+    justify-content: space-around;
+    padding: 10px;
+    background: crimson;
+    text-align: center;
+    font-size: xx-large;
+    color: white;
+    font-family: cursive;
+    font-style: italic;
+    -webkit-box-shadow: 3px 6px 9px 1px rgb(0 0 0 / 51%);
+    box-shadow: 3px 6px 9px 1px rgb(0 0 0 / 51%);
+}
+body{
+    padding: 3px;
+    text-align: center;
+    font-size: xx-large;
+    color: black;
+    font-family: cursive;
+    font-style: italic;
+    -webkit-box-shadow: 3px 6px 9px 1px rgb(0 0 0 / 51%);
+    box-shadow: 3px 6px 9px 1px rgb(0 0 0 / 51%);
+}
