@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 import { environment } from './../environments/environment.prod';
 
 import { AppComponent } from './app.component';
+import { NgxAudioPlayerModule } from 'ngx-audio-player';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgxAudioPlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

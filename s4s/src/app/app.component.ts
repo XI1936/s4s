@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { environment } from './../environments/environment.prod';
+import { Track } from 'ngx-audio-player';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,16 @@ export class AppComponent{
   minutes: any;
   hours: any;
   days: any;
+
+  autoPlay = true;
+  msaapDisplayTitle = false;
+msaapDisplayPlayList = false;
+//msaapPageSizeOptions = [2,4,6];
+msaapDisplayVolumeControls = false;
+msaapDisplayRepeatControls = false;
+msaapDisplayArtist = false;
+msaapDisplayDuration = false;
+msaapDisablePositionSlider = false;
   findDiff() {
     let d1 = Date.now();
     let d2 = new Date(2021, 2, 28);
@@ -50,5 +61,13 @@ export class AppComponent{
     this.currentTime = new Date();
     this.findDiff();
   }, 1000);
-
+ path='../assets/song.mp3';
+  msaapPlaylist: Track[] = [
+    {
+        title: 'Audio One Title',
+        link: this.path,
+        artist: 'Artist',
+        // duration: 'Duration'
+        
+    },]
 }
