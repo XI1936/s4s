@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from './../environments/environment.prod';
 import { Track } from 'ngx-audio-player';
+import * as confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ msaapDisplayVolumeControls = false;
 msaapDisplayRepeatControls = false;
 msaapDisplayArtist = false;
 msaapDisplayDuration = false;
-msaapDisablePositionSlider = false;
+msaapDisablePositionSlider = true;
   findDiff() {
     let d1 = Date.now();
     let d2 = new Date(2021, 2, 28);
@@ -61,6 +62,45 @@ msaapDisablePositionSlider = false;
     this.currentTime = new Date();
     this.findDiff();
   }, 1000);
+
+  ngOnInit(){
+  
+  //   confetti.create()({
+  //     shapes: ['square'],
+  //     particleCount: 100,
+  //     spread: 90,
+  //     origin: {
+  //         y: (.6) 
+  //     }
+  // });
+
+//   confetti.create()({
+//       particleCount: 1000,
+//       spread: 150,
+//       origin: { y: 0.7 }
+// });
+
+var duration = 25 * 1000;
+var animationEnd = Date.now() + duration;
+var defaults = { startVelocity: 10, spread: 360, ticks: 60, zIndex: 0 };
+
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+var interval = setInterval(function() {
+  var timeLeft = animationEnd - Date.now();
+
+  if (timeLeft <= 0) {
+    return clearInterval(interval);
+  }
+
+  var particleCount = 50 * (timeLeft / duration);
+  // since particles fall down, start a bit higher than random
+  confetti.create()(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+  confetti.create()(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+}, 250);
+}
  path='../assets/song.mp3';
   msaapPlaylist: Track[] = [
     {
@@ -70,4 +110,5 @@ msaapDisablePositionSlider = false;
         // duration: 'Duration'
         
     },]
+   
 }

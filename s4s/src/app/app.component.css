@@ -48,5 +48,5 @@ body{
 }
 
 .audiofile{
-    display: none;
+    display: block;
 }
